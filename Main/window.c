@@ -1,4 +1,3 @@
-/* ウィンドウ関係 */
 
 #include "bootpack.h"
 

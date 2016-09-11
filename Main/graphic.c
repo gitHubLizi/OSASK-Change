@@ -253,7 +253,7 @@ void boxfill8(unsigned char *vram, int xsize, unsigned char c, int x0, int y0, i
 
 void init_screen8(char *vram, int x, int y)
 {
-
+	int num = 0;
 	  //Bander
 	boxfill8(vram, x, COL8_99CCFF,   0,         0,      x,         y);
 	boxfill8(vram, x, COL8_333333,   0,         y - 30, x,         y);
@@ -270,6 +270,22 @@ void init_screen8(char *vram, int x, int y)
 	//Logo
 	boxfill8(vram, x, COL8_FFFFFF,   30,         y - 25, 40,      y - 15);
     boxfill8(vram, x, COL8_FFFFFF,   20,         y - 15, 30,      y - 5);
+    
+    //Big Logo 
+    int logo_x = 402 , logo_y = 109;
+    boxfill8(vram, x, COL8_FF6666,   logo_x,        logo_y,     logo_x + 100,  logo_y + 100);
+    boxfill8(vram, x, COL8_00FF99,   logo_x + 122 , logo_y,     logo_x + 222,    logo_y + 100);
+	boxfill8(vram, x, COL8_33CCFF,   logo_x,        logo_y + 122, logo_x + 100,  logo_y + 222);
+    boxfill8(vram, x, COL8_FFFF99,   logo_x + 122,  logo_y + 122, logo_x + 222,    logo_y + 222);
+
+	//Track
+	boxfill8(vram, x, COL8_996666,   x/2 - 12,         (y + 180)/2 - 120,  x/2 + 12,     (y + 180)/2 + 70);
+	
+	//Ground
+	for (num = 0; num < 150; num++)
+	{
+	boxfill8(vram, x, COL8_663333, x/2-num, (y+560-2*num)/2, x/2+num, (y+560-2*num)/2+0.5);
+	}
 
 
 	return;

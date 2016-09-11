@@ -21,7 +21,7 @@ void HariMain(void)
 		}
 	}
 	api_refreshwin(win, 8, 28, 136, 156);
-	api_getkey(1); /* ‚Ä‚«‚Æ‚¤‚ÈƒL[“ü—Í‚ğ‘Ò‚Â */
+	api_getkey(1); 
 	api_end();
 }
 
@@ -29,13 +29,13 @@ unsigned char rgb2pal(int r, int g, int b, int x, int y)
 {
 	static int table[4] = { 3, 1, 0, 2 };
 	int i;
-	x &= 1; /* ‹ô”‚©Šï”‚© */
+	x &= 1; /* åˆ¤æ–­å¥‡æ•°å¶æ•° */
 	y &= 1;
-	i = table[x + y * 2];	/* ’†ŠÔF‚ğì‚é‚½‚ß‚Ì’è” */
-	r = (r * 21) / 256;	/* ‚±‚ê‚Å 0`20 ‚É‚È‚é */
+	i = table[x + y * 2];	/* ç”¨æ¥ç”Ÿæˆä¸­é—´é¢œè‰²å¸¸é‡ */
+	r = (r * 21) / 256;	/* rä¸º0~20 */
 	g = (g * 21) / 256;
 	b = (b * 21) / 256;
-	r = (r + i) / 4;	/* ‚±‚ê‚Å 0`5 ‚É‚È‚é */
+	r = (r + i) / 4;	/* rä¸º0~5 */
 	g = (g + i) / 4;
 	b = (b + i) / 4;
 	return 0 + r + g * 6 + b * 36;

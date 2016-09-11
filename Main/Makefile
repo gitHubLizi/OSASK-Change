@@ -54,13 +54,6 @@ bootpack.hrb : bootpack.bim Makefile
 haribote.sys : asmhead.bin bootpack.hrb Makefile
 	copy /B asmhead.bin+bootpack.hrb haribote.sys
 
-
-a.bim : a.obj $(OBJS_API) Makefile
-	$(OBJ2BIM) @$(RULEFILE) out:a.bim map:a.map a.obj $(OBJS_API)
-
-a.hrb : a.bim Makefile
-	$(BIM2HRB) a.bim a.hrb 0
-
 hello(c).bim : hello(c).obj $(OBJS_API) Makefile
 	$(OBJ2BIM) @$(RULEFILE) out:hello(c).bim map:hello(c).map hello(c).obj $(OBJS_API)
 
@@ -74,62 +67,12 @@ hello(e).bim : hello(e).obj $(OBJS_API) Makefile
 hello(e).hrb : hello(e).bim Makefile
 	$(BIM2HRB) hello(e).bim hello(e).hrb 0
 
-
-winhelo.bim : winhelo.obj $(OBJS_API) Makefile
-	$(OBJ2BIM) @$(RULEFILE) out:winhelo.bim stack:1k map:winhelo.map \
-		winhelo.obj $(OBJS_API)
-
-winhelo.hrb : winhelo.bim Makefile
-	$(BIM2HRB) winhelo.bim winhelo.hrb 0
-
-winhelo2.bim : winhelo2.obj $(OBJS_API) Makefile
-	$(OBJ2BIM) @$(RULEFILE) out:winhelo2.bim stack:1k map:winhelo2.map \
-		winhelo2.obj $(OBJS_API)
-
-winhelo2.hrb : winhelo2.bim Makefile
-	$(BIM2HRB) winhelo2.bim winhelo2.hrb 0
-
-winhelo3.bim : winhelo3.obj $(OBJS_API) Makefile
-	$(OBJ2BIM) @$(RULEFILE) out:winhelo3.bim stack:1k map:winhelo3.map \
-		winhelo3.obj $(OBJS_API)
-
-winhelo3.hrb : winhelo3.bim Makefile
-	$(BIM2HRB) winhelo3.bim winhelo3.hrb 40k
-
-star1.bim : star1.obj $(OBJS_API) Makefile
-	$(OBJ2BIM) @$(RULEFILE) out:star1.bim stack:1k map:star1.map \
-		star1.obj $(OBJS_API)
-
-star1.hrb : star1.bim Makefile
-	$(BIM2HRB) star1.bim star1.hrb 47k
-
-stars.bim : stars.obj $(OBJS_API) Makefile
-	$(OBJ2BIM) @$(RULEFILE) out:stars.bim stack:1k map:stars.map \
-		stars.obj $(OBJS_API)
-
-stars.hrb : stars.bim Makefile
-	$(BIM2HRB) stars.bim stars.hrb 47k
-
-stars2.bim : stars2.obj $(OBJS_API) Makefile
-	$(OBJ2BIM) @$(RULEFILE) out:stars2.bim stack:1k map:stars2.map \
-		stars2.obj $(OBJS_API)
-
-stars2.hrb : stars2.bim Makefile
-	$(BIM2HRB) stars2.bim stars2.hrb 47k
-
 lines.bim : lines.obj $(OBJS_API) Makefile
 	$(OBJ2BIM) @$(RULEFILE) out:lines.bim stack:1k map:lines.map \
 		lines.obj $(OBJS_API)
 
 lines.hrb : lines.bim Makefile
 	$(BIM2HRB) lines.bim lines.hrb 48k
-
-walk.bim : walk.obj $(OBJS_API) Makefile
-	$(OBJ2BIM) @$(RULEFILE) out:walk.bim stack:1k map:walk.map \
-		walk.obj $(OBJS_API)
-
-walk.hrb : walk.bim Makefile
-	$(BIM2HRB) walk.bim walk.hrb 48k
 
 noodle.bim : noodle.obj $(OBJS_API) Makefile
 	$(OBJ2BIM) @$(RULEFILE) out:noodle.bim stack:1k map:noodle.map \
@@ -159,6 +102,42 @@ color2.bim : color2.obj $(OBJS_API) Makefile
 color2.hrb : color2.bim Makefile
 	$(BIM2HRB) color2.bim color2.hrb 56k
 
+color3.bim : color3.obj $(OBJS_API) Makefile
+	$(OBJ2BIM) @$(RULEFILE) out:color3.bim stack:1k map:color3.map \
+		color3.obj $(OBJS_API)
+
+color3.hrb : color3.bim Makefile
+	$(BIM2HRB) color3.bim color3.hrb 56k
+	
+color4.bim : color4.obj $(OBJS_API) Makefile
+	$(OBJ2BIM) @$(RULEFILE) out:color4.bim stack:1k map:color4.map \
+		color4.obj $(OBJS_API)
+
+color4.hrb : color4.bim Makefile
+	$(BIM2HRB) color4.bim color4.hrb 56k
+	
+color5.bim : color5.obj $(OBJS_API) Makefile
+	$(OBJ2BIM) @$(RULEFILE) out:color5.bim stack:1k map:color5.map \
+		color5.obj $(OBJS_API)
+
+color5.hrb : color5.bim Makefile
+	$(BIM2HRB) color5.bim color5.hrb 56k
+	
+color6.bim : color6.obj $(OBJS_API) Makefile
+	$(OBJ2BIM) @$(RULEFILE) out:color6.bim stack:1k map:color6.map \
+		color6.obj $(OBJS_API)
+
+color6.hrb : color6.bim Makefile
+	$(BIM2HRB) color6.bim color6.hrb 56k
+	
+color7.bim : color7.obj $(OBJS_API) Makefile
+	$(OBJ2BIM) @$(RULEFILE) out:color7.bim stack:1k map:color7.map \
+		color7.obj $(OBJS_API)
+
+color7.hrb : color7.bim Makefile
+	$(BIM2HRB) color7.bim color7.hrb 56k
+	
+	
 crack7.bim : crack7.obj Makefile
 	$(OBJ2BIM) @$(RULEFILE) out:crack7.bim stack:1k map:crack7.map crack7.obj
 
@@ -166,30 +145,26 @@ crack7.hrb : crack7.bim Makefile
 	$(BIM2HRB) crack7.bim crack7.hrb 0k
 
 haribote.img : ipl10.bin haribote.sys Makefile \
-		a.hrb hello(c).hrb hello(e).hrb  \
-		winhelo.hrb winhelo2.hrb winhelo3.hrb star1.hrb stars.hrb stars2.hrb \
-		lines.hrb walk.hrb noodle.hrb beepdown.hrb color.hrb color2.hrb \
+		hello(c).hrb hello(e).hrb  \
+		lines.hrb noodle.hrb beepdown.hrb color.hrb color2.hrb color3.hrb color4.hrb color5.hrb color6.hrb color7.hrb\
 		crack7.hrb
 	$(EDIMG)   imgin:../z_tools/fdimg0at.tek \
 		wbinimg src:ipl10.bin len:512 from:0 to:0 \
 		copy from:haribote.sys to:@: \
 		copy from:ipl10.nas to:@: \
 		copy from:make.bat to:@: \
-		copy from:a.hrb to:@: \
 		copy from:hello(c).hrb to:@: \
 		copy from:hello(e).hrb to:@: \
-		copy from:winhelo.hrb to:@: \
-		copy from:winhelo2.hrb to:@: \
-		copy from:winhelo3.hrb to:@: \
-		copy from:star1.hrb to:@: \
-		copy from:stars.hrb to:@: \
-		copy from:stars2.hrb to:@: \
 		copy from:lines.hrb to:@: \
-		copy from:walk.hrb to:@: \
 		copy from:noodle.hrb to:@: \
 		copy from:beepdown.hrb to:@: \
 		copy from:color.hrb to:@: \
 		copy from:color2.hrb to:@: \
+		copy from:color3.hrb to:@: \
+		copy from:color4.hrb to:@: \
+		copy from:color5.hrb to:@: \
+		copy from:color6.hrb to:@: \
+		copy from:color7.hrb to:@: \
 		copy from:crack7.hrb to:@: \
 		imgout:haribote.img
 
