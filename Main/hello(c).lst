@@ -1,0 +1,32 @@
+     1 00000000                                 [FORMAT "WCOFF"]
+     2 00000000                                 [INSTRSET "i486p"]
+     3 00000000                                 [OPTIMIZE 1]
+     4 00000000                                 [OPTION 1]
+     5 00000000                                 [BITS 32]
+     6 00000000                                 	EXTERN	_api_putchar
+     7 00000000                                 	EXTERN	_api_end
+     8 00000000                                 [FILE "hello(c).c"]
+     9                                          [SECTION .text]
+    10 00000000                                 	GLOBAL	_HariMain
+    11 00000000                                 _HariMain:
+    12 00000000 55                              	PUSH	EBP
+    13 00000001 89 E5                           	MOV	EBP,ESP
+    14 00000003 68 000000E0                     	PUSH	224
+    15 00000008 E8 [00000000]                   	CALL	_api_putchar
+    16 0000000D 68 000000E1                     	PUSH	225
+    17 00000012 E8 [00000000]                   	CALL	_api_putchar
+    18 00000017 68 000000E2                     	PUSH	226
+    19 0000001C E8 [00000000]                   	CALL	_api_putchar
+    20 00000021 68 000000E3                     	PUSH	227
+    21 00000026 E8 [00000000]                   	CALL	_api_putchar
+    22 0000002B 68 000000E4                     	PUSH	228
+    23 00000030 E8 [00000000]                   	CALL	_api_putchar
+    24 00000035 68 000000E5                     	PUSH	229
+    25 0000003A E8 [00000000]                   	CALL	_api_putchar
+    26 0000003F 68 000000E6                     	PUSH	230
+    27 00000044 E8 [00000000]                   	CALL	_api_putchar
+    28 00000049 68 000000E7                     	PUSH	231
+    29 0000004E E8 [00000000]                   	CALL	_api_putchar
+    30 00000053 83 C4 20                        	ADD	ESP,32
+    31 00000056 C9                              	LEAVE
+    32 00000057 E9 [00000000]                   	JMP	_api_end
