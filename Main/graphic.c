@@ -286,8 +286,6 @@ void init_screen8(char *vram, int x, int y)
 	{
 	boxfill8(vram, x, COL8_663333, x/2-num, (y+560-2*num)/2, x/2+num, (y+560-2*num)/2+0.5);
 	}
-
-
 	return;
 }
 
@@ -321,7 +319,7 @@ void putfonts8_asc(char *vram, int xsize, int x, int y, char c, unsigned char *s
 }
 
 void init_mouse_cursor8(char *mouse, char bc)
-/* マウスカーソルを準備（16x16） */
+
 {
 	static char cursor[16][16] = {
 	     "*...............",

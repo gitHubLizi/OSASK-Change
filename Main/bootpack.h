@@ -47,6 +47,27 @@ int fifo32_put(struct FIFO32 *fifo, int data);
 int fifo32_get(struct FIFO32 *fifo);
 int fifo32_status(struct FIFO32 *fifo);
 
+/* music.c */
+void api_end(void);
+int api_getkey(int mode);
+int api_alloctimer(void);
+void api_inittimer(int timer, int data);
+void api_settimer(int timer, int time);
+void api_beep(int tone);
+
+#define C  1308100
+#define Db 1385900
+#define D  1468300
+#define Eb 1555600
+#define E  1648100
+#define F  1746100
+#define Gb 1850100
+#define G  1960000
+#define Ab 2076500
+#define A  2200000
+#define Bb 2330840
+#define B  2469400
+
 /* graphic.c */
 void init_palette(void);
 void set_palette(int start, int end, unsigned char *rgb);

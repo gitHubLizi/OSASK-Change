@@ -81,12 +81,12 @@ noodle.bim : noodle.obj $(OBJS_API) Makefile
 noodle.hrb : noodle.bim Makefile
 	$(BIM2HRB) noodle.bim noodle.hrb 40k
 
-beepdown.bim : beepdown.obj $(OBJS_API) Makefile
-	$(OBJ2BIM) @$(RULEFILE) out:beepdown.bim stack:1k map:beepdown.map \
-		beepdown.obj $(OBJS_API)
+music.bim : music.obj $(OBJS_API) Makefile
+	$(OBJ2BIM) @$(RULEFILE) out:music.bim stack:1k map:music.map \
+		music.obj $(OBJS_API)
 
-beepdown.hrb : beepdown.bim Makefile
-	$(BIM2HRB) beepdown.bim beepdown.hrb 40k
+music.hrb : music.bim Makefile
+	$(BIM2HRB) music.bim music.hrb 40k
 
 color.bim : color.obj $(OBJS_API) Makefile
 	$(OBJ2BIM) @$(RULEFILE) out:color.bim stack:1k map:color.map \
@@ -146,7 +146,7 @@ crack7.hrb : crack7.bim Makefile
 
 haribote.img : ipl10.bin haribote.sys Makefile \
 		hello(c).hrb hello(e).hrb  \
-		lines.hrb noodle.hrb beepdown.hrb color.hrb color2.hrb color3.hrb color4.hrb color5.hrb color6.hrb color7.hrb\
+		lines.hrb noodle.hrb music.hrb color.hrb color2.hrb color3.hrb color4.hrb color5.hrb color6.hrb color7.hrb\
 		crack7.hrb
 	$(EDIMG)   imgin:../z_tools/fdimg0at.tek \
 		wbinimg src:ipl10.bin len:512 from:0 to:0 \
@@ -157,7 +157,7 @@ haribote.img : ipl10.bin haribote.sys Makefile \
 		copy from:hello(e).hrb to:@: \
 		copy from:lines.hrb to:@: \
 		copy from:noodle.hrb to:@: \
-		copy from:beepdown.hrb to:@: \
+		copy from:music.hrb to:@: \
 		copy from:color.hrb to:@: \
 		copy from:color2.hrb to:@: \
 		copy from:color3.hrb to:@: \

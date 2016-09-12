@@ -1,5 +1,3 @@
-/* ƒRƒ“ƒ\[ƒ‹ŠÖŒW */
-
 #include "bootpack.h"
 #include <stdio.h>
 #include <string.h>
