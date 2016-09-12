@@ -56,15 +56,10 @@ void make_wtitle8(unsigned char *buf, int xsize, char *title, char act)
 
 void putfonts8_asc_sht(struct SHEET *sht, int x, int y, int c, int b, char *s, int l)
 {
-		struct TASK *task = task_now();
 	boxfill8(sht->buf, sht->bxsize, b, x, y, x + l * 8 - 1, y + 15);
-	if (task->langmode != 0 && task->langbyte1 != 0) {
-		putfonts8_asc(sht->buf, sht->bxsize, x, y, c, s);
-		sheet_refresh(sht, x - 8, y, x + l * 8, y + 16);
-	} else {
-		putfonts8_asc(sht->buf, sht->bxsize, x, y, c, s);
-		sheet_refresh(sht, x, y, x + l * 8, y + 16);
-	}
+	putfonts8_asc(sht->buf, sht->bxsize, x, y, c, s);
+	sheet_refresh(sht, x, y, x + l * 8, y + 16);
+
 	return;
 }
 
@@ -72,7 +67,6 @@ void make_textbox8(struct SHEET *sht, int x0, int y0, int sx, int sy, int c)
 {
 	int x1 = x0 + sx, y1 = y0 + sy;
 	boxfill8(sht->buf, sht->bxsize, COL8_000000,           x0 - 6.5, y0 - 6, x1 + 6, y1 + 7);
-	boxfill8(sht->buf, sht->bxsize, c,           x0 - 1, y0 - 1, x1 + 0, y1 + 0);
 	return;
 }
 

@@ -166,6 +166,8 @@ haribote.img : ipl10.bin haribote.sys Makefile \
 		copy from:color6.hrb to:@: \
 		copy from:color7.hrb to:@: \
 		copy from:crack7.hrb to:@: \
+		copy from:gview.hrb to:@: \
+		copy from:fujisan.jpg to:@: \
 		imgout:haribote.img
 
 # ˆê”Ê‹K‘¥
